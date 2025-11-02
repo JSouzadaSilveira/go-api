@@ -1,11 +1,17 @@
-package users
+package repositories
+
+import (
+	"fmt"
+
+	"api/internal/models"
+	"github.com/google/uuid"
+)
 
 type Users struct {
 	users []models.User
 }
 
-
-func New() *Users {
+func NewUsers() *Users {
 	return &Users{users: make([]models.User, 0)}
 }
 

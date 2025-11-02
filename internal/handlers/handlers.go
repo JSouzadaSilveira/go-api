@@ -1,7 +1,11 @@
 package handlers
 
 import (
-	"github.com/jonathankossy/go-api/cmd/internal/usecases"
+	"fmt"
+	"log/slog"
+	"net/http"
+
+	"api/internal/usecases"
 )
 
 type Handlers struct {
@@ -15,7 +19,11 @@ func New(useCases *usecases.UseCases) *Handlers {
 }
 
 func (h Handlers) Listen(port int) error {
-	http.ListenAndServe(
+	h.registerUserEndpoints()
+
+	slog.Info("Starting server on port %d", port)
+	
+	return http.ListenAndServe(
 		fmt.Sprintf(":%d", port),
 		nil,
 	)

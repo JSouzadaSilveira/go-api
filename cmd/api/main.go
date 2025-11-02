@@ -1,11 +1,10 @@
 package main
 
 import (
-	"github.com/jonathankossy/go-api/cmd/internal/handlers"
-	"github.com/jonathankossy/go-api/cmd/internal/repositories"
-	"github.com/jonathankossy/go-api/cmd/internal/usecases"
+	"api/internal/handlers"
+	"api/internal/repositories"
+	"api/internal/usecases"
 )
-
 // Cadastrar e listar usuários
 // handler <- usecases (service/domain) <- repositories <- models
 func main() {

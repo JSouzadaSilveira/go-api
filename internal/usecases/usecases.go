@@ -1,5 +1,14 @@
 package usecases
 
+import (
+	"fmt"
+	"log/slog"
+	
+	"api/internal/models"
+	"api/internal/repositories"
+	"github.com/google/uuid"
+)
+
 type UseCases struct {
 	repos *repositories.Repositories
 }

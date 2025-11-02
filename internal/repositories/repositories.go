@@ -1,5 +1,10 @@
 package repositories
 
+import (
+	"api/internal/models"
+	"github.com/google/uuid"
+)
+
 type Repositories struct {
 	User interface{
 		GetAll() []models.User
@@ -12,6 +17,6 @@ type Repositories struct {
 
 func New() *Repositories {
 	return &Repositories{
-		User: users.New(),
+		User: NewUsers(),
 	}
 }
